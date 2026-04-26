@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #050507;
+  color: white;
+}
+
+/* glow */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255,0,0,0.2), transparent),
+    radial-gradient(circle at 20% 80%, rgba(120,0,255,0.1), transparent);
+  z-index: -1;
+}
+
+.card {
+  background: rgba(20,20,30,0.6);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,0,0,0.2);
+}
+
+.btn {
+  background: linear-gradient(135deg,#ff1f1f,#7a00ff);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.xp-popup {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  color: #00ff88;
+  animation: pop 1s ease forwards;
+}
+
+@keyframes pop {
+  0% { opacity: 0; transform: translateY(20px); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.warning {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5 }
+  50% { opacity: 1 }
+  100% { opacity: 0.5 }
+}
